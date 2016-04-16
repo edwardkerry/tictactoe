@@ -6,7 +6,9 @@ describe Board do
 
   describe "the playing grid" do
     it "is a 3x3 2d array" do
-      expect(board.grid).to eq ([[][][],[][][],[][][]])
+      expect(board.grid).to eq([ ["\s","\s","\s"],
+                                 ["\s","\s","\s"],
+                                 ["\s","\s","\s"] ])
     end
   end
 
