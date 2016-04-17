@@ -3,7 +3,7 @@ require 'game'
 describe Game do
 
   let(:player_klass) { double( set_symbol: true, symbol: 'X') }
-  let(:board_klass) { double( frame: true, player_move: true) }
+  let(:board_klass) { double( show_frame: true, player_move: true) }
 
   subject(:game) { described_class.new(player_klass, board_klass) }
 
@@ -18,7 +18,7 @@ describe Game do
 
   describe"#get_current_board" do
     it"calls on the Board class"do
-      expect(game.board).to receive(:frame)
+      expect(game.board).to receive(:show_frame)
       game.get_current_board
     end
   end

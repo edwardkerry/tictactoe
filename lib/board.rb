@@ -8,8 +8,8 @@ class Board
               [" "," "," "] ]
   end
 
-  def frame
-    puts"""
+  def show_frame
+    puts """
           A   B   C
         +---+---+---+
     1   | #{@grid[0][0]} | #{@grid[0][1]} | #{@grid[0][2]} |
@@ -21,34 +21,34 @@ class Board
   end
 
   def player_move(coords, symbol)
-    parse_coords(coords, symbol)
+    coords = parse_coords(coords)
+    num = get_num(coords[1])
+    let = get_let(coords[0])
+    set_location(num, let, symbol)
   end
 
   private
 
-  def parse_coords(coords, symbol)
+  def parse_coords(coords)
     coords = coords.split("")
-    x = get_x(coords[0])
-    y = get_y(coords[1])
-    set_location(x,y, symbol)
   end
 
-  def get_x(x)
-    location = {'A': 0,
-                'B': 1,
-                'C': 2}
-    location[x.to_sym]
-  end
-
-  def get_y(y)
+  def get_num(num)
     location = {'1': 0,
                 '2': 1,
                 '3': 2}
-    location[y.to_sym]
+    location[num.to_sym]
   end
 
-  def set_location(x,y,symbol)
-    @grid[x][y] = symbol
+  def get_let(let)
+    location = {'A': 0,
+                'B': 1,
+                'C': 2}
+    location[let.to_sym]
+  end
+
+  def set_location(num, let, symbol)
+    @grid[num][let] = symbol
   end
 
 end
