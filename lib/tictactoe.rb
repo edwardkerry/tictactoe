@@ -1,17 +1,22 @@
+require_relative 'game'
+require_relative 'player'
+require_relative 'board'
+require_relative 'interface'
+
 class TicTacToe
 
-  attr_reader :game, :choice
-
-  def initialize(game_klass, player_klass)
-    @game = game_klass.new(player_klass)
+  def initialize(game = Game, player = Player, board = Board, interface = Interface)
+    @player = player.new
+    @board = board.new
+    @game = game.new(@player, @board)
+    @interface = interface.new(@game)
   end
 
-  def get_symbol
-    print "Which player do you want to be? X or O\n"
-  end
-
-  def set_symbol
-    @game.set_player_symbol(gets.chomp)
+  def start_game
+    @interface.start_game
   end
 
 end
+
+t = TicTacToe.new
+t.start_game
