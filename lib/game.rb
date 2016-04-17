@@ -17,7 +17,7 @@ class Game
   end
 
   def set_player_move(coordinates)
-    @board.move(coordinates, @symbol)
+    @board.player_move(coordinates, @symbol)
   end
 
   private

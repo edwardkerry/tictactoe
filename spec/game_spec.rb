@@ -3,7 +3,7 @@ require 'game'
 describe Game do
 
   let(:player_klass) { double( set_symbol: true, symbol: 'X') }
-  let(:board_klass) { double( frame: true) }
+  let(:board_klass) { double( frame: true, player_move: true) }
 
   subject(:game) { described_class.new(player_klass, board_klass) }
 
@@ -25,7 +25,7 @@ describe Game do
 
   describe"#set_player_move" do
     it"passes player move to Board class" do
-      expect(game.board).to receive(:move).with('A1', 'X')
+      expect(game.board).to receive(:player_move).with('A1', 'X')
       game.set_player_move('A1')
     end
   end
