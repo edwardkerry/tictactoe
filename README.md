@@ -1,10 +1,31 @@
-#Tic Tac
+# Tic Tac Toe
 
+## Installation Instructions
 
+- Clone this repository
 
-###User Stories
+  `$ git clone github.com/edwardkerry/tictactoe`
 
-####Completed
+- Change into directory
+
+  `$ cd tictactoe`
+
+- Run tests with RSpec (run `$ bundle` before to install)
+
+  `$ rspec`
+
+- launch tictactoe
+
+  `$ ruby ./lib/tictactoe.rb`
+
+## Game Instructions
+
+- Choose X or 0
+- Choose your location, without spaces!
+
+### User Stories
+
+#### Completed
 ```
 As a player,
 So I can make my mark,
@@ -17,12 +38,13 @@ So I can plan my move,
 I want to see the board
 ```
 
-####To do
 ```
 As a player,
 So I can make a move,
 I want to select the best spot
 ```
+
+#### To do
 
 ```
 As a player,
