@@ -5,6 +5,7 @@ class Game
   def initialize(player_klass, board_klass)
     @player = player_klass
     @board = board_klass
+    @symbol = get_player_symbol
   end
 
   def set_player_symbol(choice)
@@ -13,6 +14,16 @@ class Game
 
   def get_current_board
     @board.frame
+  end
+
+  def set_player_move(coordinates)
+    @board.move(coordinates, @symbol)
+  end
+
+  private
+
+  def get_player_symbol
+    @player.symbol
   end
 
 end
