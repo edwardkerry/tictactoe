@@ -17,7 +17,7 @@ describe TicTacToe do
 
     describe "submitting user symbol" do
       it "asks user to input their chosen symbol" do
-        expect{ tictactoe.get_symbol }.
+        expect{tictactoe.get_symbol}.
         to output("Which player do you want to be? X or O\n").to_stdout
       end
       it "passes the input symbol to the game class" do
