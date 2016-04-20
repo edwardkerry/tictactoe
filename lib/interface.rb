@@ -25,7 +25,7 @@ class Interface
   end
 
   def show_board
-    @game.get_current_board
+    puts @game.get_current_board
   end
 
   def player_move

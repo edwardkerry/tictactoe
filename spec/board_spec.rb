@@ -14,7 +14,7 @@ describe Board do
 
   describe "the frame" do
     it "has co-ordinates, rows and columns" do
-      expect{board.show_frame}.to output("""
+      expect(board.show_frame).to eq("""
           A   B   C
         +---+---+---+
     1   |   |   |   |
@@ -22,8 +22,7 @@ describe Board do
     2   |   |   |   |
         +---+---+---+
     3   |   |   |   |
-        +---+---+---+\n""").to_stdout
-
+        +---+---+---+""")
     end
   end
 

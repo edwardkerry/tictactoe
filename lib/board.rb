@@ -9,7 +9,7 @@ class Board
   end
 
   def show_frame
-    puts """
+    """
           A   B   C
         +---+---+---+
     1   | #{@grid[0][0]} | #{@grid[0][1]} | #{@grid[0][2]} |
