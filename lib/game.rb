@@ -16,8 +16,7 @@
   end
 
   def set_player_move(coordinates)
-    symbol = get_player_symbol
-    @board.player_move(coordinates, symbol)
+    @board.player_move(coordinates, get_player_symbol)
   end
 
   private
