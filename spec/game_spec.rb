@@ -10,7 +10,7 @@ describe Game do
   context "When creating a new game" do
     describe "the selected player symbol" do
       it "is passed to the player class" do
-        expect(game.player).to receive(:set_symbol)
+        expect(game.player).to receive(:set_symbol).with('X')
         game.set_player_symbol('X')
       end
     end

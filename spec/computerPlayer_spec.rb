@@ -4,7 +4,7 @@ describe ComputerPlayer do
 
   let(:computer) { described_class.new }
 
-  context'The computer symbol' do
+  describe'#set_symbol' do
     it "is set to the opposite of the player" do
       computer.set_symbol('X')
       expect(computer.symbol).to eq ('O')
