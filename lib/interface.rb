@@ -14,7 +14,6 @@ class Interface
   def play_game
     show_board
     player_move
-    show_board
   end
 
   private
