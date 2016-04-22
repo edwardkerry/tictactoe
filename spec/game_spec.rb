@@ -55,7 +55,7 @@ describe Game do
 
   describe "#winning_move?" do
     it "checks to see if rows are complete" do
-      allow(game.board).to receive(:grid).and_return([["X","X","X"],[" ", " ", " "],[" ", " ", " "]])
+      allow(game.board).to receive(:grid).and_return(["X"," ","X"," "," "," "," "," "," "])
       expect(game.winning_move?).to eq true
     end
   end

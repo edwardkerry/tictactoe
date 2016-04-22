@@ -35,7 +35,7 @@ describe Board do
 
   describe "#computer_move" do
     it "updates the grid with player symbol" do
-      board.computer_move([4], 'X')
+      board.computer_move(4, 'X')
       expect(board.grid[4]).to eq ('X')
     end
   end

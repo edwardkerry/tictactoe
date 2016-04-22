@@ -12,8 +12,8 @@
       @winning_columns = [[0,3,6],
                          [1,4,7],
                          [2,5,8]]
-      @winning_diagonals =  [[0,4,8],
-                             [2,4,6]]
+      @winning_diagonals = [[0,4,8],
+                           [2,4,6]]
     end
 
   def set_player_symbol(choice)
@@ -56,9 +56,10 @@
     @computer.make_move(@board.grid)
   end
 
-  def check_complete(options)
-
-    options.all? {|x| x == options[0]}
+  def check_complete(winners)
+    #logic here to check line does not have a blank element/
+    #logic here to check line elements are all the same/
+    #logic here to set winner as the winning symbol
   end
 
 end

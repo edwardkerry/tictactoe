@@ -21,7 +21,7 @@ class ComputerPlayer
   def find_empty_cells(grid)
     options = []
     grid.each_with_index do |cell, index|
-      options << [index] if cell =~ /\s/
+      options << index if cell =~ /\s/
     end
     options
   end

@@ -45,7 +45,7 @@ class Board
   end
 
   def set_location(cell, symbol)
-    @grid[cell[0]] = symbol
+    @grid[cell] = symbol
   end
 
 end
