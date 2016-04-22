@@ -22,15 +22,15 @@ describe Game do
     describe "the winning moves are stored as" do
       it "rows" do
         expect(game.winning_rows).
-        to eq ([[[0][0],[0][1],[0][2]],[[1][0],[1][1],[1][2]],[[2][0],[2][1],[2][2]]])
+        to eq ([[0,1,2],[3,4,5],[6,7,8]])
       end
       it "columns" do
         expect(game.winning_columns).
-        to eq ([[[0][0],[1][0],[2][0]],[[0][1],[1][1],[2][1]],[[0][2],[1][2],[2][2]]])
+        to eq ([[0,3,6],[1,4,7],[2,5,8]])
       end
       it "diagonals" do
         expect(game.winning_diagonals).
-        to eq ([[[0][0],[1][1],[2][2]],[[0][2],[1][1],[2][0]]])
+        to eq ([[0,4,8],[2,4,6]])
       end
     end
   end

@@ -6,14 +6,14 @@
       @player = player_klass
       @board = board_klass
       @computer = computer_klass
-      @winning_rows = [[0][0],[0][1],[0][2]],
-                      [[1][0],[1][1],[1][2]],
-                      [[2][0],[2][1],[2][2]]
-      @winning_columns = [[0][0],[1][0],[2][0]],
-                         [[0][1],[1][1],[2][1]],
-                         [[0][2],[1][2],[2][2]]
-      @winning_diagonals =  [[0][0],[1][1],[2][2]],
-                            [[0][2],[1][1],[2][0]]
+      @winning_rows = [[0,1,2],
+                       [3,4,5],
+                       [6,7,8]]
+      @winning_columns = [[0,3,6],
+                         [1,4,7],
+                         [2,5,8]]
+      @winning_diagonals =  [[0,4,8],
+                             [2,4,6]]
     end
 
   def set_player_symbol(choice)
@@ -57,7 +57,7 @@
   end
 
   def check_complete(options)
-    puts options
+
     options.all? {|x| x == options[0]}
   end
 
