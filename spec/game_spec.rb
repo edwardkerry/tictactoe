@@ -3,10 +3,10 @@ require 'game'
 describe Game do
 
   let(:player_klass) { double( set_symbol: true, symbol: 'X') }
-  let(:computer_klass) { double( set_symbol: true, symbol: 'O') }
-  let(:board_klass) { double( show_frame: true, player_move: true) }
+  let(:board_klass) { double( show_frame: true, player_move: true, computer_move: true, grid: true) }
+  let(:computer_klass) { double( set_symbol: true, symbol: 'O', make_move: true) }
 
-  subject(:game) { described_class.new(player_klass, board_klass) }
+  subject(:game) { described_class.new(player_klass, board_klass, computer_klass) }
 
   context "When creating a new game" do
     describe "the selected player symbol" do
@@ -14,19 +14,41 @@ describe Game do
         expect(game.player).to receive(:set_symbol).with('X')
         game.set_player_symbol('X')
       end
+      it "is passed to the computer class" do
+        expect(game.computer).to receive(:set_symbol).with('X')
+        game.set_player_symbol('X')
+      end
+    end
+    describe "the winning moves are stored as" do
+      it "rows" do
+        expect(game.winning_rows).
+        to eq ([[[0][0],[0][1],[0][2]],[[1][0],[1][1],[1][2]],[[2][0],[2][1],[2][2]]])
+      end
+      it "columns" do
+        expect(game.winning_columns).
+        to eq ([[[0][0],[1][0],[2][0]],[[0][1],[1][1],[2][1]],[[0][2],[1][2],[2][2]]])
+      end
+      it "diagonals" do
+        expect(game.winning_diagonals).
+        to eq ([[[0][0],[1][1],[2][2]],[[0][2],[1][1],[2][0]]])
+      end
     end
   end
 
-  describe"#get_current_board" do
-    it"calls on the Board class"do
+  describe "#get_current_board" do
+    it "calls on the Board class"do
       expect(game.board).to receive(:show_frame)
       game.get_current_board
     end
   end
 
-  describe"#set_player_move" do
-    it"passes player move to Board class" do
+  describe "#set_player_move" do
+    it "passes player move to Board class" do
       expect(game.board).to receive(:player_move).with('A1', 'X')
+      game.set_player_move('A1')
+    end
+    it "passes computer move to Board class" do
+      expect(game.computer).to receive(:make_move)
       game.set_player_move('A1')
     end
   end

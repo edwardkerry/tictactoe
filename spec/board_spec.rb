@@ -26,11 +26,17 @@ describe Board do
     end
   end
 
-  describe"#add_player_move" do
-    it"updates the grid with player symbol" do
+  describe "#player_move" do
+    it "updates the grid with player symbol" do
       board.player_move('A1', 'X')
       expect(board.grid[0][0]).to eq ('X')
     end
   end
 
+  describe "#computer_move" do
+    it "updates the grid with player symbol" do
+      board.computer_move([2,1], 'X')
+      expect(board.grid[2][1]).to eq ('X')
+    end
+  end
 end

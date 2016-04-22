@@ -27,8 +27,8 @@ class Board
     set_location(num, let, symbol)
   end
 
-  def computer_move(array, symbol)
-    set_location(array[0], array[1], symbol)
+  def computer_move(coords, symbol)
+    set_location(coords[0], coords[1], symbol)
   end
 
   private
