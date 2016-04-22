@@ -6,9 +6,9 @@ describe Board do
 
   describe "the playing grid" do
     it "is a 3x3 2d array" do
-      expect(board.grid).to eq([ [" "," "," "],
-                                 [" "," "," "],
-                                 [" "," "," "] ])
+      expect(board.grid).to eq([" "," "," ",
+                                " "," "," ",
+                                " "," "," "])
     end
   end
 
@@ -29,14 +29,14 @@ describe Board do
   describe "#player_move" do
     it "updates the grid with player symbol" do
       board.player_move('A1', 'X')
-      expect(board.grid[0][0]).to eq ('X')
+      expect(board.grid[0]).to eq ('X')
     end
   end
 
   describe "#computer_move" do
     it "updates the grid with player symbol" do
-      board.computer_move([2,1], 'X')
-      expect(board.grid[2][1]).to eq ('X')
+      board.computer_move([4], 'X')
+      expect(board.grid[4]).to eq ('X')
     end
   end
 end

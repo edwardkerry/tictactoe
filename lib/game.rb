@@ -30,6 +30,10 @@
     set_computer_move
   end
 
+  def winning_move?
+    check_complete(@winning_rows)
+  end
+
   private
 
   def get_player_symbol
@@ -50,6 +54,11 @@
 
   def get_computer_coords
     @computer.make_move(@board.grid)
+  end
+
+  def check_complete(options)
+    puts options
+    options.all? {|x| x == options[0]}
   end
 
 end
