@@ -20,8 +20,8 @@ describe ComputerPlayer do
 
     describe "#make_move" do
       it "chooses an empty spot in the array" do
-        expect(computer.make_move([['X',' ','O'],['O','O','X']])).
-        to eq ([0,1])
+        expect(computer.make_move(['X',' ','O','O','O','X','O','O','O'])).
+        to eq ([1])
       end
     end
   end
