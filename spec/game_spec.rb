@@ -3,6 +3,7 @@ require 'game'
 describe Game do
 
   let(:player_klass) { double( set_symbol: true, symbol: 'X') }
+  let(:computer_klass) { double( set_symbol: true, symbol: 'O') }
   let(:board_klass) { double( show_frame: true, player_move: true) }
 
   subject(:game) { described_class.new(player_klass, board_klass) }
