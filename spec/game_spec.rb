@@ -54,8 +54,20 @@ describe Game do
   end
 
   describe "#winning_move?" do
-    it "checks to see if rows are complete" do
-      allow(game.board).to receive(:grid).and_return(["X"," ","X"," "," "," "," "," "," "])
+    it "knows when a grid has no winners" do
+      allow(game.board).to receive(:grid).and_return([" "," "," "," "," "," "," "," "," "])
+      expect(game.winning_move?).to eq false
+    end
+    it "knows when rows are winners" do
+      allow(game.board).to receive(:grid).and_return([" "," "," "," "," "," ","X","X","X"])
+      expect(game.winning_move?).to eq true
+    end
+    it "knows when columns are winners" do
+      allow(game.board).to receive(:grid).and_return(["O"," ","X"," "," ","X"," "," ","X"])
+      expect(game.winning_move?).to eq true
+    end
+    it "knows when diagnonals are winners" do
+      allow(game.board).to receive(:grid).and_return(["X"," "," "," ","X"," "," "," ","X"])
       expect(game.winning_move?).to eq true
     end
   end

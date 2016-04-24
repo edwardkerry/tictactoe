@@ -31,7 +31,10 @@
   end
 
   def winning_move?
-    check_complete(@winning_rows)
+    return true if check_complete(@winning_rows) == true
+    return true if check_complete(@winning_columns) == true
+    return true if check_complete(@winning_diagonals) == true
+    return false
   end
 
   private
@@ -57,9 +60,12 @@
   end
 
   def check_complete(winners)
-    #logic here to check line does not have a blank element/
-    #logic here to check line elements are all the same/
-    #logic here to set winner as the winning symbol
+    winners.each do |line|
+      if @board.grid[line[0]] != " "
+        return true if @board.grid[line[0]] == @board.grid[line[1]] &&
+        @board.grid[line[1]] == @board.grid[line[2]]
+      end
+    end
   end
 
 end
