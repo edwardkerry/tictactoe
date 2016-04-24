@@ -2,7 +2,7 @@ require 'interface'
 
 describe Interface do
 
-  let(:game_klass) { double(set_player_symbol: nil, get_current_board: nil, set_player_move: nil, winning_move?: false, winner: 'X') }
+  let(:game_klass) { double(set_player_symbol: nil, get_current_board: nil, set_moves: nil, winning_move?: false, winner: 'X') }
 
   subject(:interface) { described_class.new(game_klass) }
 
@@ -40,7 +40,7 @@ describe Interface do
         interface.play_game
       end
       it "collects user move for Game" do
-        expect(interface.game).to receive(:set_player_move).with('A1')
+        expect(interface.game).to receive(:set_moves).with('A1')
         interface.play_game
       end
 
@@ -56,7 +56,7 @@ describe Interface do
     describe "Incorrect user input" do
       it "accepts co-ordinates in any order" do
         allow_any_instance_of(Kernel).to receive(:gets).and_return'A 1'
-        expect(interface.game).to receive(:set_player_move).with('A1')
+        expect(interface.game).to receive(:set_moves).with('A1')
         interface.play_game
       end
     end

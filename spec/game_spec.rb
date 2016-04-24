@@ -48,11 +48,11 @@ describe Game do
   describe "#set_player_move" do
     it "passes player move to Board class" do
       expect(game.board).to receive(:player_move).with('A1', 'X')
-      game.set_player_move('A1')
+      game.set_moves('A1')
     end
     it "passes computer move to Board class" do
       expect(game.computer).to receive(:make_move)
-      game.set_player_move('A1')
+      game.set_moves('A1')
     end
   end
 

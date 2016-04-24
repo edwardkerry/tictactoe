@@ -47,7 +47,7 @@ class Interface
     puts "Where do you want to move?"
     coords = gets.chomp.upcase
     coords = check_coords(coords)
-    @game.set_player_move(coords)
+    @game.set_moves(coords)
   end
 
   def check_coords(coords)

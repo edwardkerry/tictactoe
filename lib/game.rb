@@ -29,7 +29,7 @@
     @board.show_frame
   end
 
-  def set_player_move(coordinates)
+  def set_moves(coordinates)
     @board.player_move(coordinates, get_player_symbol)
     set_computer_move
   end
