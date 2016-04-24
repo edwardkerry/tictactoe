@@ -17,7 +17,7 @@ describe Interface do
 
     describe "#start_game" do
       it "collects user symbol for Game" do
-        allow_any_instance_of(Kernel).to receive(:gets).and_return 'X'
+        allow_any_instance_of(Kernel).to receive(:gets).and_return 'x'
         expect(interface.game).to receive(:set_player_symbol).with('X')
         interface.start_game
       end

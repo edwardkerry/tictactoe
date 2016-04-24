@@ -21,7 +21,7 @@ class Interface
 
   def get_symbol
     puts "Which player do you want to be? X or O\n"
-    @game.set_player_symbol(gets.chomp)
+    @game.set_player_symbol(gets.chomp.upcase)
   end
 
   def show_board
@@ -30,7 +30,7 @@ class Interface
 
   def player_move
     puts "Where do you want to move?"
-    @game.set_player_move(gets.chomp)
+    @game.set_player_move(gets.chomp.upcase)
   end
 
   def check_winner

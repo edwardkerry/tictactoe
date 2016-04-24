@@ -9,7 +9,7 @@ class ComputerPlayer
   def set_symbol(symbol)
     options = {'X': 'O',
                'O': 'X'}
-    @symbol = options[symbol.upcase.to_sym]
+    @symbol = options[symbol.to_sym]
   end
 
   def make_move(grid)
