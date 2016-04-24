@@ -31,7 +31,7 @@
 - The Board class is responsible for storing the current game state as a 2d array, and creating a frame for this array. When it receives input from the user it updates the array.
 - The Player class is responsible for storing the chosen symbol, X or O.
 
-The program was test-driven. Other than TicTacToe, the other classes are independent from one another and all tests feature dependency injection. 
+The program was test-driven. Other than TicTacToe, the other classes are independent from one another and all tests feature dependency injection.
 
 ### User Stories
 
@@ -54,13 +54,13 @@ So I can make a move,
 I want to select the best spot
 ```
 
-#### To do
-
 ```
 As a player,
 So I can have fun,
 I want the computer to fight back!
 ```
+
+#### To do
 
 ```
 As a player,

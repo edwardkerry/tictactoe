@@ -14,12 +14,13 @@ class Interface
   def play_game
     show_board
     player_move
+    check_winner
   end
 
   private
 
   def get_symbol
-    print "Which player do you want to be? X or O\n"
+    puts "Which player do you want to be? X or O\n"
     @game.set_player_symbol(gets.chomp)
   end
 
@@ -28,8 +29,17 @@ class Interface
   end
 
   def player_move
-    print "Where do you want to move?"
+    puts "Where do you want to move?"
     @game.set_player_move(gets.chomp)
+  end
+
+  def check_winner
+    @game.winning_move? ? end_game : play_game
+  end
+
+  def end_game
+    show_board
+    puts "#{@game.winner} has won!"
   end
 
 end
