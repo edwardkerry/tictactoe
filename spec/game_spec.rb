@@ -14,11 +14,14 @@ describe Game do
         expect(game.player).to receive(:set_symbol).with('X')
         game.set_player_symbol('X')
       end
+    end
+    describe "the selected player symbol" do
       it "is passed to the computer class" do
         expect(game.computer).to receive(:set_symbol).with('X')
-        game.set_player_symbol('X')
+        game.set_computer_symbol('X')
       end
     end
+
     describe "the winning moves are stored as" do
       it "rows" do
         expect(game.winning_rows).

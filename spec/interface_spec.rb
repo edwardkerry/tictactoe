@@ -18,6 +18,7 @@ describe Interface do
     describe "#start_game" do
       it "collects user symbol for Game" do
         expect(interface.game).to receive(:set_player_symbol).with('X')
+        expect(interface.game).to receive(:set_computer_symbol).with('X')
         interface.start_game
       end
       xit "only allows X or O to be entered" do
@@ -42,11 +43,22 @@ describe Interface do
         expect(interface.game).to receive(:set_player_move).with('A1')
         interface.play_game
       end
+
+      it "announces a winner when the game is over" do
+        allow(interface.game).to receive(:winner).and_return('X')
+        expect{interface.play_game}.
+        to output("\nWhere do you want to move?\n\nX has won!\n").to_stdout
+      end
     end
-    it "announces a winner when the game is over" do
-      allow(interface.game).to receive(:winner).and_return('X')
-      expect{interface.play_game}.
-      to output("\nWhere do you want to move?\n\nX has won!\n").to_stdout
+  end
+
+  context 'Edge cases when playing' do
+    describe "Incorrect user input" do
+      it "accepts co-ordinates in any order" do
+        allow_any_instance_of(Kernel).to receive(:gets).and_return'A 1'
+        expect(interface.game).to receive(:set_player_move).with('A1')
+        interface.play_game
+      end
     end
   end
 

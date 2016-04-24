@@ -19,7 +19,10 @@
 
   def set_player_symbol(choice)
     @player.set_symbol(choice)
-    set_computer_symbol(choice)
+  end
+
+  def set_computer_symbol(choice)
+    @computer.set_symbol(choice)
   end
 
   def get_current_board
@@ -44,10 +47,6 @@
     @player.symbol
   end
 
-  def set_computer_symbol(choice)
-    @computer.set_symbol(choice)
-  end
-
   def get_computer_symbol
     @computer.symbol
   end
@@ -66,7 +65,7 @@
         @board.grid[line[0]] == @board.grid[line[1]] &&
         @board.grid[line[1]] == @board.grid[line[2]]
         then
-        @board.grid[line[0]] == get_player_symbol ?  @winner = get_player_symbol : @winner = get_computer_symbol 
+        @board.grid[line[0]] == get_player_symbol ?  @winner = get_player_symbol : @winner = get_computer_symbol
         return true
       end
     end

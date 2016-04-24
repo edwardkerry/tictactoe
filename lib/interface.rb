@@ -26,12 +26,17 @@ class Interface
 
   def check_symbol(choice)
     if choice == 'X' || choice == 'O'
-      @game.set_player_symbol(choice)
+      set_symbols(choice)
       play_game
     else
       puts "Please choose X or O"
       get_symbol
     end
+  end
+
+  def set_symbols(choice)
+    @game.set_player_symbol(choice)
+    @game.set_computer_symbol(choice)
   end
 
   def show_board
@@ -40,7 +45,13 @@ class Interface
 
   def player_move
     puts "Where do you want to move?"
-    @game.set_player_move(gets.chomp.upcase)
+    coords = gets.chomp.upcase
+    coords = check_coords(coords)
+    @game.set_player_move(coords)
+  end
+
+  def check_coords(coords)
+    coords.delete(" ")
   end
 
   def check_winner
