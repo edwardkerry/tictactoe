@@ -51,7 +51,11 @@ class Interface
   end
 
   def check_coords(coords)
-    coords.delete(" ")
+    coords = coords.delete(" ")
+    if /\d/.match(coords[0])
+       coords = coords[1]+coords[0]
+    end
+    coords
   end
 
   def check_winner

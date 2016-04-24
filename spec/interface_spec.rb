@@ -54,11 +54,12 @@ describe Interface do
 
   context 'Edge cases when playing' do
     describe "Incorrect user input" do
-      it "accepts co-ordinates in any order" do
-        allow_any_instance_of(Kernel).to receive(:gets).and_return'A 1'
+      it "accepts unexpected co-ordinates" do
+        allow_any_instance_of(Kernel).to receive(:gets).and_return'1 a'
         expect(interface.game).to receive(:set_moves).with('A1')
         interface.play_game
       end
+
     end
   end
 
