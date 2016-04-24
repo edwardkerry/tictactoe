@@ -8,7 +8,6 @@ class Interface
 
   def start_game
     get_symbol
-    play_game
   end
 
   def play_game
@@ -21,7 +20,18 @@ class Interface
 
   def get_symbol
     puts "Which player do you want to be? X or O\n"
-    @game.set_player_symbol(gets.chomp.upcase)
+    choice = gets.chomp.upcase
+    check_symbol(choice)
+  end
+
+  def check_symbol(choice)
+    if choice == 'X' || choice == 'O'
+      @game.set_player_symbol(choice)
+      play_game
+    else
+      puts "Please choose X or O"
+      get_symbol
+    end
   end
 
   def show_board

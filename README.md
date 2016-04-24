@@ -67,3 +67,33 @@ I want 3 in a row to signal the game ending
 ```
 
 #### To do
+
+```
+As a player,
+So a game ends when all spaces are filled,
+I want a stalemate to be declared
+```
+
+```
+As a player,
+So I can't make an illegal move,
+I want to be prevented from choosing a taken spot
+```
+
+```
+As a player,
+So I don't have to worry too much,
+I want to be able to enter my coordinates as '3 A' or 'A3' etc
+```
+
+```
+As a player,
+So I don't make an illegal move,
+I want to be prevented from choosing a non-existent spot
+```
+
+```
+As a player,
+So I can really have fun,
+I want the computer to make intelligent choices
+```

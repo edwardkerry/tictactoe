@@ -11,15 +11,19 @@ describe Interface do
   end
 
   context "When starting a new game" do
-
     before do
+      allow_any_instance_of(Kernel).to receive(:gets).and_return 'X'
     end
 
     describe "#start_game" do
       it "collects user symbol for Game" do
-        allow_any_instance_of(Kernel).to receive(:gets).and_return 'x'
         expect(interface.game).to receive(:set_player_symbol).with('X')
         interface.start_game
+      end
+      xit "only allows X or O to be entered" do
+        allow_any_instance_of(Kernel).to receive(:gets).and_return 'a'
+        expect{interface.start_game}.
+        to output('Please choose X or O').to_stdout
       end
     end
   end
