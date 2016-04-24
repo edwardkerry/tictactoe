@@ -7,7 +7,7 @@ class Player
   end
 
   def set_symbol(choice)
-    @symbol = choice.upcase
+    @symbol = choice
   end
 
 end

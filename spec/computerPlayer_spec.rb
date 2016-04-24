@@ -7,7 +7,7 @@ describe ComputerPlayer do
   context "before a symbol is set" do
     describe "#set_symbol" do
       it "is set to the opposite of the player" do
-        computer.set_symbol('X')
+        computer.set_symbol('x')
         expect(computer.symbol).to eq ('O')
       end
     end

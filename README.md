@@ -60,10 +60,10 @@ So I can have fun,
 I want the computer to fight back!
 ```
 
-#### To do
-
 ```
 As a player,
 So I can win or lose,
 I want 3 in a row to signal the game ending
 ```
+
+#### To do
