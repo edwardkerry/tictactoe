@@ -1,6 +1,6 @@
   class Game
 
-    attr_reader :player, :board, :computer, :winning_rows, :winning_columns, :winning_diagonals
+    attr_reader :player, :board, :computer, :winning_rows, :winning_columns, :winning_diagonals, :winner
 
     def initialize(player_klass, board_klass, computer_klass)
       @player = player_klass
@@ -14,6 +14,7 @@
                          [2,5,8]]
       @winning_diagonals = [[0,4,8],
                            [2,4,6]]
+      @winner = nil
     end
 
   def set_player_symbol(choice)
@@ -61,9 +62,12 @@
 
   def check_complete(winners)
     winners.each do |line|
-      if @board.grid[line[0]] != " "
-        return true if @board.grid[line[0]] == @board.grid[line[1]] &&
+      if @board.grid[line[0]] != " " &&
+        @board.grid[line[0]] == @board.grid[line[1]] &&
         @board.grid[line[1]] == @board.grid[line[2]]
+        then
+        @board.grid[line[0]] == get_player_symbol ?  @winner = get_player_symbol : @winner = get_computer_symbol 
+        return true
       end
     end
   end

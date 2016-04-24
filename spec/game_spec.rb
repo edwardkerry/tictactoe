@@ -72,4 +72,12 @@ describe Game do
     end
   end
 
+  describe "@winner" do
+    it "knows which symbol has won" do
+      allow(game.board).to receive(:grid).and_return(["X"," "," "," ","X"," "," "," ","X"])
+      game.winning_move?
+      expect(game.winner).to eq game.player.symbol
+    end
+  end
+
 end
