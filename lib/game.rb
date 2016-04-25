@@ -35,9 +35,9 @@
   end
 
   def winning_move?
-    return true if check_complete(@winning_rows) == true
-    return true if check_complete(@winning_columns) == true
-    return true if check_complete(@winning_diagonals) == true
+    return true if check_winner(@winning_rows) == true
+    return true if check_winner(@winning_columns) == true
+    return true if check_winner(@winning_diagonals) == true
     return false
   end
 
@@ -59,7 +59,7 @@
     @computer.make_move(@board.grid)
   end
 
-  def check_complete(winners)
+  def check_winner(winners)
     winners.each do |line|
       if @board.grid[line[0]] != " " &&
         @board.grid[line[0]] == @board.grid[line[1]] &&
