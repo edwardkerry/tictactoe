@@ -2,9 +2,9 @@ require 'interface'
 
 describe Interface do
 
-  let(:game_klass) { double(set_player_symbol: nil, get_current_board: nil, set_moves: nil, winning_move?: false, winner: 'X') }
+  let(:game) { double(set_player_symbol: nil, get_current_board: nil, set_moves: nil, winning_move?: false, winner: 'X') }
 
-  subject(:interface) { described_class.new(game_klass) }
+  subject(:interface) { described_class.new(game) }
 
   before do
     allow(interface.game).to receive(:winning_move?).and_return(true)
