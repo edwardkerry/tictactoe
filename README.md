@@ -81,6 +81,12 @@ I want to be prevented from choosing a non-existent spot
 #### To do
 
 ```
+As a maker,
+So my code is DRY and SRP'd,
+I want the symbols to be isolated within the game class
+```
+
+```
 As a player,
 So I can't make an illegal move,
 I want to be prevented from choosing a taken spot
