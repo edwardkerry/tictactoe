@@ -16,7 +16,7 @@ describe Interface do
     end
 
     describe "#start_game" do
-      it "collects user symbol for Game" do
+      xit "collects user symbol for Game" do
         expect(interface.game).to receive(:set_player_symbol).with('X')
         expect(interface.game).to receive(:set_computer_symbol).with('X')
         interface.start_game
@@ -54,12 +54,16 @@ describe Interface do
 
   context 'Edge cases when playing' do
     describe "Incorrect user input" do
-      it "accepts unexpected co-ordinates" do
+      it "accepts abnormal co-ordinates" do
         allow_any_instance_of(Kernel).to receive(:gets).and_return'1 a'
         expect(interface.game).to receive(:set_moves).with('A1')
         interface.play_game
       end
-
+      xit "does not accept non-existent co-ordinates" do
+        allow_any_instance_of(Kernel).to receive(:gets).and_return'4 b'
+        expect{interface.start_game}.
+        to output('Please choose valid co-ordinates').to_stdout
+      end
     end
   end
 
