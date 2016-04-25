@@ -2,18 +2,13 @@
 
     attr_reader :player, :board, :computer, :winning_rows, :winning_columns, :winning_diagonals, :winner
 
-    def initialize(player_klass, board_klass, computer_klass)
+    def initialize(player_klass, computer_klass, board_klass)
       @player = player_klass
-      @board = board_klass
       @computer = computer_klass
-      @winning_rows = [[0,1,2],
-                       [3,4,5],
-                       [6,7,8]]
-      @winning_columns = [[0,3,6],
-                         [1,4,7],
-                         [2,5,8]]
-      @winning_diagonals = [[0,4,8],
-                           [2,4,6]]
+      @board = board_klass
+      @winning_rows = [[0,1,2],[3,4,5],[6,7,8]]
+      @winning_columns = [[0,3,6],[1,4,7],[2,5,8]]
+      @winning_diagonals = [[0,4,8],[2,4,6]]
       @winner = nil
     end
 

@@ -6,11 +6,11 @@ require_relative 'interface'
 
 class TicTacToe
 
-  def initialize(game = Game, player = Player, board = Board, interface = Interface, computer_player = ComputerPlayer)
+  def initialize(player = Player, computer_player = ComputerPlayer, board = Board, game = Game, interface = Interface)
     @player = player.new
-    @board = board.new
     @computer_player = computer_player.new
-    @game = game.new(@player, @board, @computer_player)
+    @board = board.new
+    @game = game.new(@player,@computer_player, @board)
     @interface = interface.new(@game)
   end
 

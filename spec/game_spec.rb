@@ -3,10 +3,10 @@ require 'game'
 describe Game do
 
   let(:player_klass) { double( set_symbol: true, symbol: 'X') }
-  let(:board_klass) { double( show_frame: true, player_move: true, computer_move: true, grid: true) }
   let(:computer_klass) { double( set_symbol: true, symbol: 'O', make_move: true) }
+  let(:board_klass) { double( show_frame: true, player_move: true, computer_move: true, grid: true) }
 
-  subject(:game) { described_class.new(player_klass, board_klass, computer_klass) }
+  subject(:game) { described_class.new(player_klass, computer_klass, board_klass) }
 
   context "When creating a new game" do
     describe "the selected player symbol" do
