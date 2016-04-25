@@ -59,6 +59,11 @@ describe Interface do
         expect(interface.game).to receive(:set_moves).with('A1')
         interface.play_game
       end
+      it "accepts co-ordinates with extra characters" do
+        allow_any_instance_of(Kernel).to receive(:gets).and_return'3bewfsdfdf'
+        expect(interface.game).to receive(:set_moves).with('B3')
+        interface.play_game
+      end
       xit "does not accept non-existent co-ordinates" do
         allow_any_instance_of(Kernel).to receive(:gets).and_return'4 b'
         expect{interface.start_game}.

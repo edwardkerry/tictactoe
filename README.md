@@ -72,13 +72,13 @@ So I don't have to worry too much,
 I want to be able to enter my coordinates as '3 A' or 'A3' etc
 ```
 
-#### To do
-
 ```
 As a player,
 So I don't make an illegal move,
 I want to be prevented from choosing a non-existent spot
 ```
+
+#### To do
 
 ```
 As a player,

@@ -45,17 +45,13 @@ class Interface
 
   def player_move
     puts "Where do you want to move?"
-    coords = gets.chomp.upcase
-    coords = parse_coords(coords)
+    coords = parse_coords(gets.chomp.upcase)
     check_valid(coords)
   end
 
   def parse_coords(coords)
     coords = coords.delete(" ")
-    if /\d/.match(coords[0])
-       coords = coords[1]+coords[0]
-    end
-    coords
+    /\d/.match(coords[0]) ? coords[1]+coords[0] : coords[0]+coords[1]
   end
 
   def check_valid(coords)
